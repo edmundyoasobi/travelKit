@@ -1,6 +1,6 @@
 import { StyleSheet, View, Text, Pressable, FlatList } from "react-native";
-import BottomButton from "./Components/BottomButton";
-import TabBar from "./Components/TabBar";
+import BottomButton from "../Components/BottomButton";
+import TabBar from "../Components/TabBar";
 import React, { useState } from "react";
 import Icon from "react-native-vector-icons/AntDesign";
 
