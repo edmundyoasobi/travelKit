@@ -1,10 +1,14 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import { StyleSheet, Text, View } from "react-native";
+import Itinerary from "./Itinerary";
+import DateSelection from "./DateSelection";
 
+//q: What is the purpose of this file?
+//a: This file is the entry point of the app. It is the first file that is executed when the app is run. It is the main file that contains the main code of the app.
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <DateSelection />
       <StatusBar style="auto" />
     </View>
   );
@@ -13,8 +17,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
   },
 });
