@@ -11,7 +11,7 @@ import {
 
 import axios from "axios";
 import Icon from "react-native-vector-icons/FontAwesome";
-import BottomButton from "./Components/BottomButton";
+import BottomButton from "../Components/BottomButton";
 
 function Itinerary() {
   const API_KEY = "AIzaSyA1xDSzcPLp6YLlZ8BydyZBgldVU6Ac-rQ";
