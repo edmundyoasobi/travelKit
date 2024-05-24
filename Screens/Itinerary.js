@@ -13,7 +13,7 @@ import axios from "axios";
 import Icon from "react-native-vector-icons/FontAwesome";
 import BottomButton from "../Components/BottomButton";
 
-function Itinerary() {
+function Itinerary({ navigation}) {
   const API_KEY = "AIzaSyA1xDSzcPLp6YLlZ8BydyZBgldVU6Ac-rQ";
   const fields = "places.displayName,places.formattedAddress,places.priceLevel";
   const textQuery = "Spicy Vegetarian Food in Sydney, Australia";
@@ -27,6 +27,9 @@ function Itinerary() {
     "X-Goog-Api-Key": API_KEY,
     "X-Goog-FieldMask": fields,
   };
+  const navigationButtonPressHanlder = () => {
+    navigation.navigate("DateSelection");
+  }
   const fetchDataFromExpress = async () => {
     axios
       .post("https://places.googleapis.com/v1/places:searchText", requestBody, {
@@ -146,7 +149,7 @@ function Itinerary() {
         />
       </View>
 
-      <BottomButton/>
+      <BottomButton navigationButtonPressHanlder={navigationButtonPressHanlder}/>
     </View>
   );
 }

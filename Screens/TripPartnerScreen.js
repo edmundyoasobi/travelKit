@@ -4,7 +4,10 @@ import Icon from "react-native-vector-icons/Feather";
 import Icon2 from "react-native-vector-icons/MaterialCommunityIcons";
 import Icon3 from "react-native-vector-icons/AntDesign";
 
-function TripPartnerScreen() {
+function TripPartnerScreen({navigation}) {
+  const navigationButtonPressHanlder = () => {
+    navigation.navigate("VisitedPlace");
+  }
   return (
     <View style={styles.container}>
       <View style={styles.headerContainer}>
@@ -31,7 +34,7 @@ function TripPartnerScreen() {
           </View>
         </View>
       </View>
-      <BottomButton />
+      <BottomButton navigationButtonPressHanlder={navigationButtonPressHanlder}/>
     </View>
   );
 }

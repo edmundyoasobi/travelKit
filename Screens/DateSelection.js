@@ -4,7 +4,7 @@ import TabBar from "../Components/TabBar";
 import React, { useState } from "react";
 import Icon from "react-native-vector-icons/AntDesign";
 
-function DateSelection() {
+function DateSelection({ navigation}) {
   const [selectedTab, setSelectedTab] = useState(0);
 
   const [numberOfDays, setNumberOfDays] = useState(1);
@@ -17,6 +17,9 @@ function DateSelection() {
       setNumberOfDays(numberOfDays - 1);
     }
   };
+  const navigationButtonPressHanlder = () => {
+    navigation.navigate("TripPartnerScreen");
+  }
 
   const tabPressHanlder = (tabIndex) => {
     setSelectedTab(tabIndex);
@@ -154,7 +157,7 @@ function DateSelection() {
           </View>
         </View>
       </View>
-      <BottomButton />
+      <BottomButton navigationButtonPressHanlder={navigationButtonPressHanlder}/>
     </View>
   );
 }

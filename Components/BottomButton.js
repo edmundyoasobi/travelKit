@@ -1,10 +1,10 @@
 import { StyleSheet, View, Pressable,Text } from "react-native";
 
-function BottomButton() {
+function BottomButton(props) {
   return (
     <View style={styles.bottomContainer}>
       <View style={styles.bottomButton}>
-        <Pressable>
+        <Pressable onPress={props.navigationButtonPressHanlder}>
           <Text>Next</Text>
         </Pressable>
       </View>
