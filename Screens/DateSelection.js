@@ -1,3 +1,5 @@
+// please rating the code below in term of structure and best practices from 1-10 and give some feedback on what is good and what can be improved
+
 import { StyleSheet, View, Text, Pressable, FlatList } from "react-native";
 import BottomButton from "../Components/BottomButton";
 import TabBar from "../Components/TabBar";
