@@ -6,6 +6,7 @@ import TripPartnerScreen from "./Screens/TripPartnerScreen";
 import VisitedPlace from "./Screens/VisitedPlace";
 import {NavigationContainer} from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
+import ShowItinerary from "./Screens/ShowItinerary";
 
 const Stack = createStackNavigator();
 //q: What is the purpose of this file?
@@ -15,6 +16,8 @@ export default function App() {
 
   return (
     <View style={styles.container}>
+      <ShowItinerary/>
+      {/*
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen name="Itinerary" component={Itinerary}  />
@@ -23,6 +26,8 @@ export default function App() {
           <Stack.Screen name="TripPartnerScreen" component={TripPartnerScreen} />
         </Stack.Navigator>
       </NavigationContainer>
+  */}
+      
       <StatusBar style="auto" />
     </View>
   );
