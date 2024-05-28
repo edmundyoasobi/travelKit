@@ -48,7 +48,7 @@ function Itinerary({ navigation}) {
   const cities = [
     {
       id: "1",
-      cityName: "Tokyo",
+      cityName: "Tokyo00",
       countryName: "Japan",
     },
     {
