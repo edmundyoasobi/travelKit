@@ -9,13 +9,19 @@ import {
 import { useState } from "react";
 import BottomButton from "../Components/BottomButton";
 
-function VisitedPlace() {
+function VisitedPlace({ navigation}) {
+  
   const [enteredPlace, setEnteredPlace] = useState("");
   const [skipPlaces, setSkipPlaces] = useState([
     "Akihabara",
     "Shibuya",
     "Shinjuku",
   ]);
+
+  const navigationButtonPressHanlder = () => {
+    navigation.navigate("ShowItinerary");
+  }
+
   function addSkipPlace() {
     setSkipPlaces((currentSkipPlaces) => [...currentSkipPlaces, enteredPlace]);
     setEnteredPlace("");
@@ -54,7 +60,11 @@ function VisitedPlace() {
           <Button title="Add" onPress={addSkipPlace} />
         </View>
 
-        <BottomButton />
+        <View style={{marginBottom : 20}}>
+        <BottomButton
+          navigationButtonPressHanlder={navigationButtonPressHanlder}
+        />
+      </View>
       </View>
     </View>
   );
@@ -63,12 +73,12 @@ function VisitedPlace() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 70,
     justifyContent: "space-between",
-    marginBottom: 50,
+    backgroundColor : "white"
   },
   headerContainer: {
     marginHorizontal: 20,
+    marginTop: 10,
   },
   titleStyle: {
     fontSize: 27,

@@ -34,7 +34,11 @@ function TripPartnerScreen({navigation}) {
           </View>
         </View>
       </View>
-      <BottomButton navigationButtonPressHanlder={navigationButtonPressHanlder}/>
+      <View style={{marginBottom : 20}}>
+        <BottomButton
+          navigationButtonPressHanlder={navigationButtonPressHanlder}
+        />
+      </View>
     </View>
   );
 }
@@ -42,13 +46,12 @@ function TripPartnerScreen({navigation}) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 50,
-
+    backgroundColor: "white",
     justifyContent: "space-between",
-    marginBottom: 50,
   },
   headerContainer: {
     marginHorizontal: 20,
+    marginTop : 10
   },
   titleStyle: {
     fontSize: 27,

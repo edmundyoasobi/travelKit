@@ -3,10 +3,16 @@
 import { StyleSheet, View, Text, Pressable, FlatList } from "react-native";
 import BottomButton from "../Components/BottomButton";
 import TabBar from "../Components/TabBar";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Icon from "react-native-vector-icons/AntDesign";
 
-function DateSelection({ navigation}) {
+
+function DateSelection({ navigation, route }) {
+  const { city, country } = route.params;
+  useEffect(() => {
+    console.log(city);
+    console.log(country);
+  }, []);
   const [selectedTab, setSelectedTab] = useState(0);
 
   const [numberOfDays, setNumberOfDays] = useState(1);
@@ -20,8 +26,8 @@ function DateSelection({ navigation}) {
     }
   };
   const navigationButtonPressHanlder = () => {
-    navigation.navigate("TripPartnerScreen");
-  }
+    navigation.navigate("ShowItinerary", { city: city, country: country , numberOfDays: numberOfDays});
+  };
 
   const tabPressHanlder = (tabIndex) => {
     setSelectedTab(tabIndex);
@@ -159,20 +165,24 @@ function DateSelection({ navigation}) {
           </View>
         </View>
       </View>
-      <BottomButton navigationButtonPressHanlder={navigationButtonPressHanlder}/>
+      <View style={{ marginBottom: 20 }}>
+        <BottomButton
+          navigationButtonPressHanlder={navigationButtonPressHanlder}
+        />
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 50,
     justifyContent: "space-between",
-    marginBottom: 50,
     flex: 1,
+    backgroundColor: "white",
   },
   headerContainer: {
     marginHorizontal: 20,
+    marginTop: 10,
   },
   flatListItem: {
     justifyContent: "center",
