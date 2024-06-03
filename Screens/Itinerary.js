@@ -136,14 +136,12 @@ function Itinerary({ navigation }) {
           renderItem={(itemData) => (
             <Pressable onPress={()=>selectCity({city: itemData.item.cityName, country: itemData.item.countryName})}>
             <View style={{ flexDirection: "row", marginTop: 20 }}>
-              
                 <View>
                   <Image
                     style={styles.tinyLogo}
                     source={itemData.item.imagesource}
                   ></Image>
                 </View>
-
                 <View style={styles.flatListItem}>
                   <Text style={{ fontWeight: "bold", fontSize: 17 }}>
                     {itemData.item.cityName}
