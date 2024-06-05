@@ -31,6 +31,7 @@ export default function App() {
           <Stack.Screen name="VisitedPlace" component={VisitedPlace} />
           <Stack.Screen name="TripPartnerScreen" component={TripPartnerScreen} />
           <Stack.Screen name="ShowItinerary" component={ShowItinerary} />
+          
         </Stack.Navigator>
       </NavigationContainer>
 
